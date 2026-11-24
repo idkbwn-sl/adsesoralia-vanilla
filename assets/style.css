@@ -100,3 +100,7 @@ body{background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:
 .legal .developer-credit a:hover,.legal .developer-credit a:focus-visible{color:var(--ink);text-decoration:underline}
 @media(min-width:900px){.legal:not(.institution){flex-direction:row;justify-content:space-between;text-align:left;gap:24px}.legal .developer-credit{margin-left:auto;text-align:right}.legal.institution{display:block;text-align:left}.legal.institution .institution-logos{margin:24px auto}}
 @media(prefers-reduced-motion:reduce){.legal .developer-credit a{transition:none}}
+
+/* Social release: preserve approved 2-row institutional composition, use available space. */
+.institution-logos figure{padding:8px 12px}.institution-logos figure img,.institution-logos figure:first-child img{width:100%;height:100%;object-fit:contain;max-width:none;max-height:none}
+@media(max-width:400px){.institution-logos figure{padding:5px 8px}}
