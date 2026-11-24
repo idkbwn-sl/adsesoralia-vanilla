@@ -50,3 +50,37 @@ body{background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:
 #office-map .maplibregl-ctrl-attrib{font-size:10px;line-height:18px}
 #office-map .maplibregl-ctrl-attrib a{font-size:inherit}
 #office-map .maplibregl-ctrl-group button{padding:0;min-height:0;border-radius:0}
+
+/* V9 — acabado visual y navegación móvil. */
+:root{--radius-ui:8px;--radius-photo:10px}
+.btn,.secondary-btn,.menu{border-radius:var(--radius-ui)}
+.hero-art,.image-card .pic,.subhero .subvisual,.photo,.map-frame{border-radius:var(--radius-photo);overflow:hidden}
+.hero-art:after{border-radius:inherit}
+.check{color:#fff;border-radius:5px;display:grid;place-items:center;font-weight:800}
+.whatsapp{transition:opacity .22s ease,transform .22s ease,visibility .22s;}
+.whatsapp.footer-hidden,.menu-open .whatsapp{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(10px)}
+.institution-logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 24px;align-items:center;width:min(100%,560px);margin:22px auto;text-align:center}
+.institution-logos figure{min-width:0;justify-items:center;align-content:center}
+.institution-logos figure:first-child{grid-column:1/-1}
+.institution-logos img{display:block;width:100%;height:72px;max-width:220px;max-height:none;object-fit:contain}
+.institution-logos figure:first-child img{max-width:380px;height:88px}
+.institution-logos img[hidden]{display:none}
+.menu-backdrop{display:none}
+@media(min-width:900px){.navlinks a:last-child{border-radius:var(--radius-ui)!important}}
+@media(max-width:899px){
+ header{z-index:40}
+ .menu-backdrop{display:block;position:fixed;inset:0;z-index:39;background:rgba(24,24,24,.45);backdrop-filter:blur(3px);opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s}
+ .menu-open .menu-backdrop{opacity:1;visibility:visible;pointer-events:auto}
+ html.menu-open{overflow:hidden;overscroll-behavior:none}
+ html.menu-open body{position:fixed;left:0;right:0;width:100%;overflow:hidden}
+ .navlinks,.navlinks.open{display:grid;gap:4px;top:100%;max-height:calc(100dvh - 101px);overflow-y:auto;overscroll-behavior:contain;background:var(--paper);padding:14px 20px 24px;box-shadow:0 16px 24px #0001;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-9px);transition:opacity .24s ease,transform .24s ease,visibility .24s}
+ .navlinks.open{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}
+ .navlinks a,.navlinks a:last-child,.navlinks a:last-child:hover{background:transparent;color:var(--ink);box-shadow:none;text-decoration:none;margin:0;padding:12px 10px;border-radius:0!important}
+ .navlinks a.active,.navlinks a.active:hover,.navlinks a:last-child.active{color:var(--orange);background:transparent;box-shadow:none;text-decoration:none}
+}
+@media(max-width:400px){.institution-logos{gap:14px}.institution-logos img{height:58px}.institution-logos figure:first-child img{height:70px}}
+@media(prefers-reduced-motion:reduce){.navlinks,.menu-backdrop,.whatsapp{transition:none!important}}
+@media(max-width:899px){
+ html.menu-open body{padding-top:var(--locked-header-height,100px)}
+ html.menu-open header{position:fixed;top:0;left:0;right:0}
+}
