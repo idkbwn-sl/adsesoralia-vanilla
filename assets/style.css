@@ -84,3 +84,19 @@ body{background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:
  html.menu-open body{padding-top:var(--locked-header-height,100px)}
  html.menu-open header{position:fixed;top:0;left:0;right:0}
 }
+
+/* V10: institutional logos, full-width first row and two equal columns. */
+.institution-logos{width:min(100%,440px);margin:24px auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:stretch}
+.institution-logos figure{margin:0;min-width:0;display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden;padding:8px;aspect-ratio:2.1/1}
+.institution-logos figure:first-child{grid-column:1/-1;aspect-ratio:4.2/1}
+.institution-logos figure img,.institution-logos figure:first-child img{display:block;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;border-radius:0}
+.institution-logos img[hidden]{display:none}
+@media(max-width:400px){.institution-logos{gap:8px}.institution-logos figure{padding:5px}}
+
+/* Footer — developer signature */
+.legal{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}
+.legal .developer-credit{margin:0;font-size:inherit;line-height:inherit;color:inherit;white-space:nowrap}
+.legal .developer-credit a{font-weight:700;color:var(--orange);text-decoration:none;transition:color .25s ease}
+.legal .developer-credit a:hover,.legal .developer-credit a:focus-visible{color:var(--ink);text-decoration:underline}
+@media(min-width:900px){.legal{flex-direction:row;justify-content:space-between;text-align:left;gap:24px}.legal .developer-credit{margin-left:auto;text-align:right}}
+@media(prefers-reduced-motion:reduce){.legal .developer-credit a{transition:none}}
