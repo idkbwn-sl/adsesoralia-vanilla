@@ -98,5 +98,5 @@ body{background:var(--paper);font-family:Arial,Helvetica,sans-serif;line-height:
 .legal .developer-credit{margin:0;font-size:inherit;line-height:inherit;color:inherit;white-space:nowrap}
 .legal .developer-credit a{font-weight:700;color:var(--orange);text-decoration:none;transition:color .25s ease}
 .legal .developer-credit a:hover,.legal .developer-credit a:focus-visible{color:var(--ink);text-decoration:underline}
-@media(min-width:900px){.legal{flex-direction:row;justify-content:space-between;text-align:left;gap:24px}.legal .developer-credit{margin-left:auto;text-align:right}}
+@media(min-width:900px){.legal:not(.institution){flex-direction:row;justify-content:space-between;text-align:left;gap:24px}.legal .developer-credit{margin-left:auto;text-align:right}.legal.institution{display:block;text-align:left}.legal.institution .institution-logos{margin:24px auto}}
 @media(prefers-reduced-motion:reduce){.legal .developer-credit a{transition:none}}
